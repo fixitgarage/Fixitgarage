@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbaikan Engine - Website Jasa Service Kendaraan</title>
+    <style>
+        /* Gaya dasar untuk tampilan yang modern dan menarik */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e0c3fc, #8ec5fc);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #673ab7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .container h1 {
+            text-align: center;
+            color: #673ab7;
+        }
+        .container p {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .service-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .service-item {
+            background: #f4f4f4;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #673ab7;
+        }
+        .service-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        #formContainer {
+            display: none;
+            background: #f9f9f9;
+            padding: 20px;
+            border: 2px solid #673ab7;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        #formContainer h2 {
+            text-align: center;
+            color: #673ab7;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        form input,
+        form select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        form button {
+            background-color: #673ab7;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #5e35b1;
+        }
+        a.back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #673ab7;
+            font-weight: bold;
+        }
+        /* Style untuk menampilkan pilihan yang telah dipilih */
+        #choiceDisplay {
+            text-align: center;
+            font-weight: bold;
+            color: #673ab7;
+            margin-bottom: 20px;
+        }
+        .icon {
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        .note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function pilihEngineOption(option) {
+            // Tampilkan form jika belum tampil
+            document.getElementById('formContainer').style.display = 'block';
+            // Set nilai pada input tersembunyi untuk opsi perbaikan engine
+            document.getElementById('engineOption').value = option;
+            // Tampilkan pilihan yang telah dipilih
+            document.getElementById('choiceDisplay').textContent = "Anda memilih: " + option;
+            // Set nilai pada input layanan terpilih di form
+            document.getElementById('selectedLayanan').value = option;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Website Jasa Service Kendaraan</h1>
+    </header>
+    <div class="container">
+        <h1>Perbaikan Engine</h1>
+        <p>Pilih jenis perbaikan engine yang sesuai dengan kebutuhan kendaraan Anda.</p>
+
+        <div class="service-options">
+            <div class="service-item" onclick="pilihEngineOption('Perbaikan Engine Ringan')">
+                <img src="https://www.blibli.com/friends-backend/wp-content/uploads/2023/12/B1200119-Cover-Jenis-Service-Mobil.jpg" alt="Perbaikan Engine Ringan">
+                <h3>Perbaikan Engine Ringan</h3>
+                <p>Perbaikan cepat untuk masalah minor.</p>
+            </div>
+            <div class="service-item" onclick="pilihEngineOption('Perbaikan Engine Menengah')">
+                <img src="https://media.istockphoto.com/id/641975348/id/foto/perbaikan-mesin-mobil-v8.jpg?s=612x612&w=0&k=20&c=2GrZwT1-dwJ3tUFdvY2Ok1tC0_hlcVksZhDX2_bETWk=" alt="Perbaikan Engine Menengah">
+                <h3>Perbaikan Engine Menengah</h3>
+                <p>Penanganan masalah yang membutuhkan perbaikan lebih mendalam.</p>
+            </div>
+            <div class="service-item" onclick="pilihEngineOption('Perbaikan Engine Berat')">
+                <img src="https://www.blibli.com/friends-backend/wp-content/uploads/2023/11/B1000851-Cover-Turun-Mesin.jpg" alt="Perbaikan Engine Berat">
+                <h3>Perbaikan Engine Berat</h3>
+                <p>Perbaikan menyeluruh untuk masalah serius.</p>
+            </div>
+        </div>
+
+        <p id="choiceDisplay"></p>
+
+        <div id="formContainer">
+            <form action="Struk Pembayaran.html" method="post">
+                <h2><i class="icon">📄</i> Form Pengisian dan Pembayaran</h2>
+                <label for="selectedLayanan">Layanan Terpilih:</label>
+                <input type="text" id="selectedLayanan" name="selectedLayanan" readonly>
+                <input type="hidden" id="engineOption" name="engineOption" value="">
+
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+                <label for="alamat">Alamat:</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat Anda" required>
+
+                <label for="telephone">Nomor Telepon:</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Masukkan nomor telepon Anda" required>
+
+                <label for="email">Alamat Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+                <label for="metodePembayaran">Metode Pembayaran:</label>
+                <select id="metodePembayaran" name="metodePembayaran" required>
+                    <option value="" disabled selected>Pilih metode pembayaran</option>
+                    <option value="Kartu Kredit">Kartu Kredit</option>
+                    <option value="Debit">Debit</option>
+                    <option value="QRIS">QRIS</option>
+                    <option value="Cash">Cash</option>
+                </select>
+
+                <button type="submit"><i class="icon">💳</i> Bayar</button>
+                <div class="note">Pastikan semua data sudah benar sebelum mengirim.</div>
+            </form>
+            <a href="index.html" class="back-link">Kembali ke Halaman Utama</a>
+        </div>
+    </div>
+</body>
+</html>
